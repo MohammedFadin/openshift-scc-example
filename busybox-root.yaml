@@ -1,0 +1,18 @@
+###
+######### The infamous busybox pod for testing and for data migration between File Storages.  By: Fadin
+###
+apiVersion: v1
+kind: Pod
+metadata:
+  generateName: busybox-
+  labels:
+    name: busybox
+    tier: utility
+spec:
+  containers:
+    - image: busybox:latest
+      command: ["/bin/sh", "-ec", "while :; do echo '.'; sleep 5 ; done"]
+      name: busybox
+      securityContext:
+        privileged: true
+  serviceAccountName: serviceaccount-with-root-access
