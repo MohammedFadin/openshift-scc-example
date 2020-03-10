@@ -15,4 +15,3 @@ spec:
       name: busybox
       securityContext:
         privileged: true
-  #serviceAccountName: serviceaccount-with-root-access
